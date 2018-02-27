@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
     <title>WebUSB Test</title>
 </head>
 <body>
@@ -11,14 +12,20 @@
     <button type="button" onclick="auth()" id="login-button">デバイスを調べる</button>
 </form>
 <div class="return">
-    <div id="Vendorid"></div>
-    <div id="Productid"></div>
-    <div id="Serialnumber"></div>
-    <script src="js/usb.js"></script>
+    <div>
+        <h2>VendorId</h2>
+        <p id="Vendorid"></p>
+    </div>
+    <div>
+        <h2>ProductId</h2>
+        <p id="Productid"></p>
+    </div>
+    <div>
+        <h2>SerialNumber</h2>
+        <p id="Serialnumber"></p>
+    </div>
+
 </div>
-
-</body>
-
 <script src="js/usb.js"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</body>
 </html>
