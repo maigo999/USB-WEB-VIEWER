@@ -13,9 +13,9 @@ const auth = () => {
         console.log(device.serialNumber);
         target1.innerHTML = '0x' + fixvendorId;
         target2.innerHTML = '0x' + fixproductId;
-        
+
         if (!device.serialNumber){
-            target3.innerHTML = "シリアルナンバーがありません";
+            target3.innerHTML = "SerialNumberがありません";
         }else{
             target3.innerHTML = device.serialNumber;
         }
