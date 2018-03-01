@@ -4,112 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/ress.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styl.css">
-    <title>Document</title>
+    <link rel="icon" sizes="any" href="favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png">
+    <title>USB WEB VIEWER</title>
 </head>
+<header>
+    <a href="#"><h1>USB WEB VIEWER</h1></a> 
+</header>
 <body>
-    <header>
-       <a href="#"><h1>Portfolio</h1></a>
-    </header>
-    <main>
-        <div id="top" class="box back-para">
-            <div class="top-title">
-                <h2>Welcome</h2>
-            </div>
+<div class="about">
+    <h2>このサイトはなに？</h2>
+    <p>WEBUSBAPIを使用して、WEB上でUSBデバイスのVendorID、ProductID、SerialNumberを表示することのできるサイトです。<br>操作は簡単、デバイスを調べるボタンを押して調べたいデバイスを選択するだけ。 <br><br> ※このサイトはGoogle Chrome61以上をサポートしています。
+    </p>
+</div>
+<div class="content">
+<form class="form">
+    <button type="button" onclick="auth()" id="login-button" class="fream">デバイスを調べる</button>
+</form>
+<div class="return">
+    <div class="fream return-box">
+        <h2>Vendor ID</h2>
+        <p id="Vendorid"></p>
+    </div>
+    <div class="fream return-box">
+        <h2>Product ID</h2>
+        <p id="Productid"></p>
+    </div>
+    <div class="fream return-box">
+        <h2>SerialNumber</h2>
+        <p id="Serialnumber"></p>
+    </div>
+</div>
+</div>
 
-        </div>
-        <div id="profile" class="box">
-            <div class="profile-box">
-                <div class="profile-h2">
-                <h2>自己紹介</h2>
-                </div>
-                <div class="profile-content">
-                    <div class="profile-text">
-                    <h3>名前</h3>
-                    <p>尾関 将樹</p>
-                    <h3>使用言語</h3>
-                    <p>
-                        HTML(HTML5)<br>
-                        CSS (CSS3)<br>
-                        SASS (学習中)<br>
-                        STYLUS<br>
-                        MARKDOWN<br>
-                    </p>
-                    <h3>使用ソフト</h3>
-                    <p>
-                        Adobe Dreamweaver / Adobe Photoshop <br>
-                        Adobe Illustrator / Adobe XD <br><br>
-                        Visual Studio Code / Affinity Designer
-                    </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div id="content" class="box back-para">
-            <div class="content-h2">
-            <h2>作成物</h2>
-            </div>
-            <div class="content">
-
-                    <a href="https://e-vokre.csmsgames.com/" class="content-01">
-                        <div class="content-box">
-                            <div class="content-textbox">
-                                <h2>E-vokreサイト</h2>
-                                <p>自分が所属するサークルのゲーム紹介サイト<br>
-                                    少ない素材でどうやって魅せるかを考えて作成しました 。
-                                    <br><br>
-                                    デザイン、コーディング担当 
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://maigo999.github.io/PixelArtVR/" class="content-02">
-                        <div class="content-box">
-                            <div class="content-textbox">
-                                <h2>PixelArtVR</h2>
-                                <p>WebVRを使用してドット絵を見せれば面白い体験ができるのでは？という発想から作成したコンテンツ</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                            <div class="content-box">
-                                <div class="content-textbox">
-                                    <h2>Title</h2>
-                                    <p>詳細詳細詳細詳細詳細細詳細詳細細詳細詳細細詳細詳細</p>
-                                </div>
-                            </div>
-                    </a>
-                    <a href="">
-                            <div class="content-box">
-                                <div class="content-textbox">
-                                    <h2>Title</h2>
-                                    <p>詳細詳細詳細詳細詳細細詳細詳細細詳細詳細細詳細詳細</p>
-                                </div>
-                            </div>
-                    </a>
-                    <a href="">
-                            <div class="content-box">
-                                <div class="content-textbox">
-                                    <h2>Title</h2>
-                                    <p>詳細詳細詳細詳細詳細細詳細詳細細詳細詳細細詳細詳細</p>
-                                </div>
-                            </div>
-                    </a>
-                    <a href="">
-                            <div class="content-box">
-                                <div class="content-textbox">
-                                    <h2>Title</h2>
-                                    <p>詳細詳細詳細詳細詳細細詳細詳細細詳細詳細細詳細詳細</p>
-                                </div>
-                            </div>
-                    </a>
-
-        </div>
-    </main>
-    <footer>
-        <p><small>(C) 2018 MASAKI OZEKI</small></p>
-    </footer>
 </body>
+<footer>
+    <p><small id="Copyright"></small></p>
+</footer>
+<script>
+    var now = new Date();
+    var year = now.getFullYear();
+    var time = document.getElementById("Copyright");
+    time.innerHTML = "(C) " + year + " MASAKI OZEKI";
+</script>
+<script src="js/usb.js"></script>
 </html>
